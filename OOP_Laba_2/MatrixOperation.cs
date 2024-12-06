@@ -67,5 +67,14 @@ namespace Matrix
             }
             return transposed;
         }
+        public MyMatrix GetTransponedCopy()
+        {
+            return new MyMatrix(GetTransponedArray());
+        }
+
+        public void TransposeMe()
+        {
+            matrix = GetTransponedArray();
+        }
     }
 }
