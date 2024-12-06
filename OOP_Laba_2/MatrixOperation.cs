@@ -13,7 +13,7 @@ namespace Matrix
 
             if (a.Height != b.Height || a.Width != b.Width)
             {
-                throw new ArgumentException("Матриця повинна бути однакового розміру");
+                throw new ArgumentException("The matrix must be the same size");
             }
 
             MyMatrix result = new MyMatrix(a);
@@ -33,7 +33,7 @@ namespace Matrix
         {
             if (a.Height != b.Height || a.Width != b.Width)
             {
-                throw new ArgumentException("Матриця повинна бути однакового розміру");
+                throw new ArgumentException("The matrix must be the same size");
             }
             MyMatrix result = new MyMatrix(new double[a.Height, b.Width]);
 
@@ -51,6 +51,21 @@ namespace Matrix
             }
 
             return result;
+        }
+        protected double[,] GetTransponedArray()
+        {
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+            double[,] transposed = new double[cols, rows];
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    transposed[j, i] = matrix[i, j];
+                }
+            }
+            return transposed;
         }
     }
 }
