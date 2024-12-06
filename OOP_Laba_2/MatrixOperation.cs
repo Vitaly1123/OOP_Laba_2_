@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Matrix
 {
@@ -10,71 +11,75 @@ namespace Matrix
     {
         public static MyMatrix operator +(MyMatrix a, MyMatrix b)
         {
-
+            // Перевірка, чи матриці мають однакові розміри
             if (a.Height != b.Height || a.Width != b.Width)
-            {
-                throw new ArgumentException("The matrix must be the same size");
-            }
+                throw new InvalidOperationException("Розміри матриць повинні співпадати для додавання.");
 
-            MyMatrix result = new MyMatrix(a);
+            // Створення нової матриці для результату
+            var result = new MyMatrix(new double[a.Height, a.Width]);
 
+            // Прохід по всіх елементах і виконання додавання
             for (int i = 0; i < a.Height; i++)
             {
-                for (int j = 0; j < b.Height; j++)
+                for (int j = 0; j < a.Width; j++)
                 {
+                    // Додавання відповідних елементів
                     result[i, j] = a[i, j] + b[i, j];
                 }
             }
-
+            // Повернення матриці-результату
             return result;
         }
 
+
         public static MyMatrix operator *(MyMatrix a, MyMatrix b)
         {
-            if (a.Height != b.Height || a.Width != b.Width)
-            {
-                throw new ArgumentException("The matrix must be the same size");
-            }
-            MyMatrix result = new MyMatrix(new double[a.Height, b.Width]);
+            // Перевірка на сумісність розмірів для множення
+            if (a.Width != b.Height)
+                throw new InvalidOperationException("Розміри матриць не підходять для множення.");
 
+            // Створення нової матриці для результату
+            var result = new MyMatrix(new double[a.Height, b.Width]);
+
+            // Прохід по рядках матриці a та стовпцях матриці b
             for (int i = 0; i < a.Height; i++)
             {
                 for (int j = 0; j < b.Width; j++)
                 {
-                    double sum = 0;
+                    // Ініціалізація елемента матриці-результату
+                    result[i, j] = 0;
+
+                    // Обчислення значення через добуток відповідних елементів
                     for (int k = 0; k < a.Width; k++)
                     {
-                        sum += a[i, k] * b[k, j];
+                        result[i, j] += a[i, k] * b[k, j];
                     }
-                    result[i, j] = sum;
                 }
             }
 
             return result;
         }
-        protected double[,] GetTransponedArray()
-        {
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-            double[,] transposed = new double[cols, rows];
 
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
+
+        private double[,] GetTransponedArray()
+        {
+            var transposed = new double[Width, Height];
+            for (int i = 0; i < Height; i++)
+                for (int j = 0; j < Width; j++)
                     transposed[j, i] = matrix[i, j];
-                }
-            }
+
             return transposed;
         }
+
         public MyMatrix GetTransponedCopy()
         {
             return new MyMatrix(GetTransponedArray());
         }
 
-        public void TransposeMe()
+        public void TransponeMe()
         {
             matrix = GetTransponedArray();
         }
     }
+
 }

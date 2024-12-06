@@ -1,0 +1,14 @@
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\bin\Debug\net6.0\OOP_Laba_2.exe
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\bin\Debug\net6.0\OOP_Laba_2.deps.json
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\bin\Debug\net6.0\OOP_Laba_2.runtimeconfig.json
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\bin\Debug\net6.0\OOP_Laba_2.dll
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\bin\Debug\net6.0\OOP_Laba_2.pdb
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.AssemblyInfoInputs.cache
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.AssemblyInfo.cs
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.csproj.CoreCompileInputs.cache
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.dll
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\refint\OOP_Laba_2.dll
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.pdb
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\OOP_Laba_2.genruntimeconfig.cache
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\OOP_Laba_2\obj\Debug\net6.0\ref\OOP_Laba_2.dll

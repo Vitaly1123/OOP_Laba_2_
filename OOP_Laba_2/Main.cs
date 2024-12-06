@@ -1,13 +1,10 @@
 ﻿using Matrix;
 using System;
 
-namespace MyMatrixApp
+class Program
 {
-    class MyMatrixApp
+    static void Main(string[] args)
     {
-        static void Main() 
-        {
-
-        }
+        
     }
 }

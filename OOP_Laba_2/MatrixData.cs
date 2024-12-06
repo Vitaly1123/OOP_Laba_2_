@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Matrix
 {
-    public partial class MatrixData
+    public partial class MyMatrix
     {
         protected double[,] matrix;
         protected double? cachedDet = null;
@@ -37,7 +37,7 @@ namespace Matrix
             {
                 if (jaggedMatrix[i].Length != width)
                 {
-                    throw new ArgumentException("Усі підмасиви повинні мати однакову кількість елементів.");
+                    throw new ArgumentException("All subarrays must have the same number of elements.");
                 }
             }
             matrix = new double[height, width];
@@ -87,6 +87,7 @@ namespace Matrix
                 }
             }
         }
+
         public int getHeight() => Height;
         public int getWidth() => Width;
         public double this[int index1, int index2]
@@ -108,5 +109,21 @@ namespace Matrix
             InvalidateCache();
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < Height; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    sb.Append(matrix[i, j] + "\t");
+                }
+                sb.AppendLine();
+            }
+            return sb.ToString();
+        }
+
+
     }
+
 }
