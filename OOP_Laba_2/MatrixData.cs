@@ -87,6 +87,26 @@ namespace Matrix
                 }
             }
         }
+        public int getHeight() => Height;
+        public int getWidth() => Width;
+        public double this[int index1, int index2]
+        {
+            get => matrix[index1, index2];
+            set
+            {
+                matrix[index1, index2] = value;
+                InvalidateCache();
+            }
+        }
+        public double getElement(int row, int col)
+        {
+            return matrix[row, col];
+        }
+        public void setElement(int row, int col, double value)
+        {
+            matrix[row, col] = value;
+            InvalidateCache();
+        }
 
     }
 }
