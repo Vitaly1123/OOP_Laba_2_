@@ -7,13 +7,6 @@ namespace Matrix
     public partial class MyMatrix
     {
         protected double[,] matrix;
-        protected double? cachedDet = null;
-        protected bool isMod = true;
-        protected void InvalidateCache()
-        {
-            isMod = true;
-            cachedDet = null;
-        }
         public int Height //row
         {
             get => matrix.GetLength(0);
@@ -80,7 +73,6 @@ namespace Matrix
             set
             {
                 matrix[index1, index2] = value;
-                InvalidateCache();
             }
         }
         public double getElement(int row, int col)
@@ -90,7 +82,6 @@ namespace Matrix
         public void setElement(int row, int col, double value)
         {
             matrix[row, col] = value;
-            InvalidateCache();
         }
 
         public override string ToString()
