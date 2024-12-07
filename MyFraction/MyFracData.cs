@@ -34,4 +34,24 @@ partial class MyFrac
         this.nom = Math.Abs(nom) / gcd * sign;
         this.denom = Math.Abs(denom) / gcd;
     }
+    public string ToStringWithIntPart()
+    {
+        string minus = "";
+        if (this.nom < 0) minus = "-";
+        long intPart = Math.Abs(this.nom) / this.denom;
+        long nom = Math.Abs(this.nom) - intPart * this.denom;
+        if (nom == 0)
+        {
+            return $"{minus}({intPart}/{this.denom})";
+        }
+        if (intPart == 0)
+        {
+            return $"{minus}({new MyFrac(nom, this.denom)})";
+        }
+        return $"{minus}({intPart}+{new MyFrac(nom, this.denom)})";
+    }
+    public override string ToString()
+    {
+        return nom + "/" + denom;
+    }
 }

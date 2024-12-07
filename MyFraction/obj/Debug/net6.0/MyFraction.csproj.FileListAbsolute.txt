@@ -1,0 +1,14 @@
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\bin\Debug\net6.0\MyFraction.exe
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\bin\Debug\net6.0\MyFraction.deps.json
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\bin\Debug\net6.0\MyFraction.runtimeconfig.json
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\bin\Debug\net6.0\MyFraction.dll
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\bin\Debug\net6.0\MyFraction.pdb
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.AssemblyInfoInputs.cache
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.AssemblyInfo.cs
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.csproj.CoreCompileInputs.cache
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.dll
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\refint\MyFraction.dll
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.pdb
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\MyFraction.genruntimeconfig.cache
+C:\КС-231\2 Курс\ООП\OOP_Laba_2\MyFraction\obj\Debug\net6.0\ref\MyFraction.dll
