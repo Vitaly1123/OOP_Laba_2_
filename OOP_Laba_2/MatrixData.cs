@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Matrix
 {
@@ -37,7 +38,7 @@ namespace Matrix
             {
                 if (jaggedMatrix[i].Length != width)
                 {
-                    throw new ArgumentException("All subarrays must have the same number of elements.");
+                    throw new ArgumentException("Усі підмасиви повинні мати однакову кількість елементів.");
                 }
             }
             matrix = new double[height, width];
@@ -49,43 +50,26 @@ namespace Matrix
                 }
             }
         }
-        public MyMatrix(string[] str)
+        public MyMatrix(string[] rows)
         {
-            int rows = str.Length;
-            int cols = str[0].Trim().Split().Length;
-            matrix = new double[rows, cols];
-            InvalidateCache();
-            for (int i = 0; i < rows; i++)
+            int rowCount = rows.Length;
+            int colCount = rows[0].Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
+
+            matrix = new double[rowCount, colCount];
+            for (int i = 0; i < rowCount; i++)
             {
-                double[] tempArr = Array.ConvertAll(str[i].Trim().Split(), double.Parse);
-                for (int j = 0; j < cols; j++)
-                {
-                    matrix[i, j] = tempArr[j];
-                }
+                var rowValues = rows[i].Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (rowValues.Length != colCount)
+                    throw new ArgumentException("Рядки повинні мати однакову кількість чисел.");
+
+                for (int j = 0; j < colCount; j++)
+                    matrix[i, j] = double.Parse(rowValues[j]);
             }
         }
-        public MyMatrix(string input)
+
+        // Конструктор: створення з рядка
+        public MyMatrix(string matrixString) : this(matrixString.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
         {
-            string[] str = input.Split(new[] { "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries);
-
-            string[][] strMatrix = new string[str.Length][];
-
-            for (int i = 0; i < str.Length; i++)
-            {
-                strMatrix[i] = str[i].Split(new[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
-            }
-            int rows = strMatrix.Length;
-            int cols = strMatrix[0].Length;
-
-            matrix = new double[rows, cols];
-            InvalidateCache();
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    matrix[i, j] = double.Parse(strMatrix[i][j]);
-                }
-            }
         }
 
         public int getHeight() => Height;
@@ -111,7 +95,7 @@ namespace Matrix
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
